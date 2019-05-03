@@ -1,0 +1,31 @@
+{
+ "name": "TMP",
+ "version": "1.0.0",
+ "description": "",
+ "main": "index.js",
+ "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "webpack": "webpack --progress --profile",
+  "webpackwatch": "webpack --progress --profile --watch",
+  "webpackwatcherr": "webpack --progress --profile --watch --display-error-details"
+ },
+ "keywords": [],
+ "author": "",
+ "license": "ISC",
+ "devDependencies": {
+  "css-loader": "^2.1.1",
+  "extract-loader": "^3.1.0",
+  "file-loader": "^3.0.1",
+  "lodash": "^4.17.11",
+  "node-sass": "^4.12.0",
+  "sass-loader": "^7.1.0",
+  "style-loader": "^0.23.1",
+  "webpack": "^4.30.0",
+  "webpack-cli": "^3.3.1"
+ },
+ "dependencies": {
+  "@babel/core": "^7.4.4",
+  "@babel/preset-env": "^7.4.4",
+  "babel-loader": "^8.0.5"
+ }
+}
