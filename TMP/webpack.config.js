@@ -8,7 +8,7 @@ const ROOT_DIR = path.resolve(__dirname, '../');
 const SRC_DIR = path.resolve(ROOT_DIR, 'src');
 
 module.exports = {
-    entry: ['./wwwroot/src/app.jsx'],
+    entry: ['./wwwroot/src/index.jsx'],
     output: {
         filename: bundleFileName + '.js',
         path: path.resolve(__dirname, 'wwwroot/dist')
@@ -19,17 +19,7 @@ module.exports = {
     },
     optimization: {
         minimizer: [
-            // // we specify a custom UglifyJsPlugin here to get source maps in production
-            // new UglifyJsPlugin({
-            //     cache: true,
-            //     parallel: true,
-            //     uglifyOptions: {
-            //         compress: false,
-            //         ecma: 6,
-            //         mangle: true
-            //     },
-            //     sourceMap: true
-            // })
+            
         ]
     },
     plugins: [
@@ -69,28 +59,6 @@ module.exports = {
                 test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
                 loaders: ['file-loader']
             },
-            // {
-            //     test: /\.scss$/,
-            //     use: [{
-            //         loader: "style-loader" // creates style nodes from JS strings
-            //     }, {
-            //         loader: "css-loader" // translates CSS into CommonJS
-            //     }, {
-            //         loader: "sass-loader" // compiles Sass to CSS
-            //     }]
-            // },
-            // {
-            //     test: /\.css$/,
-            //     loader: "style-loader!css-loader"
-            // },
-            //   {
-            //     test: /\.(css|scss)$/,
-            //     use: [
-            //       "style-loader", // creates style nodes from JS strings
-            //       "css-loader", // translates CSS into CommonJS
-            //       "sass-loader" // compiles Sass to CSS, using Node Sass by default
-            //     ]
-            //   },
         ]
     }
 };
