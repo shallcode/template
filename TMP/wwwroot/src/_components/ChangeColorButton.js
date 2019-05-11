@@ -2,12 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { colorActions } from '../_actions'
 
-const ColorChangeButton = ({dispatch}) => {
+export default function ColorChangeButton() {
   return (
-    <div>
-      Test
-    </div>
+      <button>Click Me</button>
   )
 }
-
-export default connect()(ColorChangeButton);
