@@ -634,18 +634,6 @@ eval("module.exports = function(originalModule) {\n\tif (!originalModule.webpack
 
 /***/ }),
 
-/***/ "./wwwroot/src/App/App.jsx":
-/*!*********************************!*\
-  !*** ./wwwroot/src/App/App.jsx ***!
-  \*********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_components */ \"./wwwroot/src/_components/index.js\");\n\n\n\nvar App = function App() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_1__[\"ChangeColorButton\"], null));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (App); // class App extends React.Component {\n//     constructor(props) {\n//         super(props);\n//         const { dispatch } = this.props;\n//     }\n//     render() {\n//         const { colorActions } = this.props;\n//         return (\n//             <div>\n//                 <h1>Testing App</h1>\n//                 <ChangeColorButton />\n//             </div>\n//         );\n//     }\n// }\n// function mapStateToProps(state) {\n//     const { alert } = state;\n//     return {\n//         alert\n//     };\n// }\n// const connectedApp = connect(mapStateToProps)(App);\n// export { connectedApp as App };\n\n//# sourceURL=webpack:///./wwwroot/src/App/App.jsx?");
-
-/***/ }),
-
 /***/ "./wwwroot/src/_actions/color.actions.js":
 /*!***********************************************!*\
   !*** ./wwwroot/src/_actions/color.actions.js ***!
@@ -667,30 +655,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _color_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./color.actions */ \"./wwwroot/src/_actions/color.actions.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"colorActions\", function() { return _color_actions__WEBPACK_IMPORTED_MODULE_0__[\"colorActions\"]; });\n\n\n\n//# sourceURL=webpack:///./wwwroot/src/_actions/index.js?");
-
-/***/ }),
-
-/***/ "./wwwroot/src/_components/ChangeColorButton.jsx":
-/*!*******************************************************!*\
-  !*** ./wwwroot/src/_components/ChangeColorButton.jsx ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../_actions */ \"./wwwroot/src/_actions/index.js\");\n\n\n\n\nvar ChangeColorButton = function ChangeColorButton(_ref) {\n  var dispatch = _ref.dispatch;\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"div\", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"button\", {\n    onClick: function onClick(e) {\n      dispatch(_actions__WEBPACK_IMPORTED_MODULE_2__[\"colorActions\"].blue());\n    }\n  }));\n};\n\nChangeColorButton = Object(react_redux__WEBPACK_IMPORTED_MODULE_1__[\"connect\"])()(ChangeColorButton);\n/* harmony default export */ __webpack_exports__[\"default\"] = (ChangeColorButton);\n\n//# sourceURL=webpack:///./wwwroot/src/_components/ChangeColorButton.jsx?");
-
-/***/ }),
-
-/***/ "./wwwroot/src/_components/index.js":
-/*!******************************************!*\
-  !*** ./wwwroot/src/_components/index.js ***!
-  \******************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ChangeColorButton__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ChangeColorButton */ \"./wwwroot/src/_components/ChangeColorButton.jsx\");\n/* empty/unused harmony star reexport */\n\n//# sourceURL=webpack:///./wwwroot/src/_components/index.js?");
 
 /***/ }),
 
@@ -786,7 +750,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var redu
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _App_App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./App/App */ \"./wwwroot/src/App/App.jsx\");\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_helpers */ \"./wwwroot/src/_helpers/index.js\");\n/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./_actions */ \"./wwwroot/src/_actions/index.js\");\n\n\n\n\n\n // const unsubscribe = store.subscribe(() => console.log(store.getState()));\n// store.dispatch(colorActions.blue());\n// store.dispatch(colorActions.red());\n// store.dispatch(colorActions.green());\n// unsubscribe();\n\nObject(react_dom__WEBPACK_IMPORTED_MODULE_1__[\"render\"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_2__[\"Provider\"], {\n  store: _helpers__WEBPACK_IMPORTED_MODULE_4__[\"store\"]\n}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App_App__WEBPACK_IMPORTED_MODULE_3__[\"App\"], null)), document.getElementById('root'));\n\n//# sourceURL=webpack:///./wwwroot/src/index.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"./node_modules/react-dom/index.js\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./_helpers */ \"./wwwroot/src/_helpers/index.js\");\n/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./_actions */ \"./wwwroot/src/_actions/index.js\");\n\n\n // import App  from \"./App/App\";\n\n\n // const unsubscribe = store.subscribe(() => console.log(store.getState()));\n// store.dispatch(colorActions.blue());\n// store.dispatch(colorActions.red());\n// store.dispatch(colorActions.green());\n// unsubscribe();\n// Guessing jsx requires functions, \n\nfunction ColorChangeButton() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(\"button\", null, \"Click Me\");\n}\n\nfunction App() {\n  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(ColorChangeButton, null);\n}\n\nObject(react_dom__WEBPACK_IMPORTED_MODULE_1__[\"render\"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_redux__WEBPACK_IMPORTED_MODULE_2__[\"Provider\"], {\n  store: _helpers__WEBPACK_IMPORTED_MODULE_3__[\"store\"]\n}, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(App, null)), document.getElementById('root'));\n\n//# sourceURL=webpack:///./wwwroot/src/index.jsx?");
 
 /***/ }),
 
