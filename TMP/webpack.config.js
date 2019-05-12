@@ -7,18 +7,18 @@ const ROOT_DIR = path.resolve(__dirname, '../');
 const SRC_DIR = path.resolve(ROOT_DIR, 'src');
 
 module.exports = {
-    entry: ['./wwwroot/src/index.jsx'],
+    entry: ['./wwwroot/src/index.tsx'],
     output: {
         filename: bundleFileName + '.js',
         path: path.resolve(__dirname, 'wwwroot/dist')
     },
     mode: process.env.NODE_ENV || 'development',
     resolve: {
-        extensions: ['.js', '.jsx', '.scss']
+        extensions: ['.js', '.jsx', '.scss', '.ts', '.tsx']
     },
     optimization: {
         minimizer: [
-            
+
         ]
     },
     plugins: [
@@ -29,7 +29,7 @@ module.exports = {
             {
                 // this is so that we can compile any React,
                 // ES6 and above into normal ES5 syntax
-                test: /\.(js|jsx)$/,
+                test: /\.(js|jsx|ts|tsx)$/,
                 // we do not want anything from node_modules to be compiled
                 exclude: /node_modules/,
                 use: ['babel-loader']
