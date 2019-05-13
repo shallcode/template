@@ -7,14 +7,14 @@ const ROOT_DIR = path.resolve(__dirname, '../');
 const SRC_DIR = path.resolve(ROOT_DIR, 'src');
 
 module.exports = {
-    entry: ['./wwwroot/src/index.tsx'],
+    entry: ['./wwwroot/src/index.scss', './wwwroot/src/index.tsx'],
     output: {
         filename: bundleFileName + '.js',
         path: path.resolve(__dirname, 'wwwroot/dist')
     },
     mode: process.env.NODE_ENV || 'development',
     resolve: {
-        extensions: ['.js', '.jsx', '.scss', '.ts', '.tsx']
+        extensions: ['.js', '.ts', '.tsx', '.scss']
     },
     optimization: {
         minimizer: [
@@ -29,7 +29,7 @@ module.exports = {
             {
                 // this is so that we can compile any React,
                 // ES6 and above into normal ES5 syntax
-                test: /\.(js|jsx|ts|tsx)$/,
+                test: /\.(js|ts|tsx)$/,
                 // we do not want anything from node_modules to be compiled
                 exclude: /node_modules/,
                 use: ['babel-loader']
@@ -37,23 +37,22 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: bundleFileName + '.css'
-                        }
+                  {
+                    loader: 'file-loader',
+                    options: {
+                      name: 'bundle.css',
                     },
-                    {
-                        loader: 'extract-loader'
+                  },
+                  {loader: 'extract-loader'},
+                  {loader: 'css-loader'},
+                  {
+                    loader: 'sass-loader',
+                    options: {
+                      includePaths: ['./node_modules'],
                     },
-                    {
-                        loader: "css-loader",
-                    },
-                    {
-                        loader: "sass-loader"
-                    }
-                ]
-            },
+                  }
+                ],
+              },
             {
                 test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
                 loaders: ['file-loader']

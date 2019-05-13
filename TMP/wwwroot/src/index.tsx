@@ -12,13 +12,14 @@ import { Store } from 'redux';
 
 // Import the store function and state
 import configureStore, { IAppState } from './_helpers/store';
-import { getAllColors, changeColor } from './_actions/Actions';
+import { getAllColors } from './_actions/Actions';
 
 
 import App from './App/App';
 import './index.scss';
 
-interface IProps {
+// Root component props
+interface RootProps {
   store: Store<IAppState>;
 }
 
@@ -26,21 +27,17 @@ interface IProps {
 Create a root component that receives the store via props
 and wraps the App component with Provider, giving props to containers
 */
-const Root: React.SFC<IProps> = props => {
+const Root: React.SFC<RootProps> = props => {
   return (
-    <Provider store={props.store}>
-      <App />
-    </Provider>
+      <Provider store={props.store}>
+        <App />
+      </Provider>
   );
 };
 
 // Generate the store
 const store = configureStore();
 store.dispatch(getAllColors());
-store.dispatch(changeColor());
-store.dispatch(changeColor());
-store.dispatch(changeColor());
-
 
 // Render the App
 ReactDOM.render(<Root store={store} />, document.getElementById(

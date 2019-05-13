@@ -3,4 +3,11 @@ body {
     .name-container {
         display: grid;
     }
+    .qc-app-content {
+        margin-top: 30px !important;
+    }
+
+    .qc-part-view .segment{
+        height: 100%;
+    }
 }
