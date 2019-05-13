@@ -25,8 +25,7 @@ const App: React.SFC<{}> = () => {
         <Grid.Column width={1}>
           <Menu vertical icon >
             <Menu.Item >
-              <Icon name="upload"></Icon>
-
+            <FileImportButton />
             </Menu.Item>
             <Menu.Item>
               <Icon name="edit"></Icon>
@@ -41,7 +40,6 @@ const App: React.SFC<{}> = () => {
         </Grid.Column>
         <Grid.Column width={12} className="qc-part-view">
           <Segment>
-            <FileImportButton />
             <SvgView/>
           </Segment>
         </Grid.Column>
