@@ -1,32 +1,30 @@
-// import { Reducer } from "redux";
-// import {  } from "../_actions/Actions";
+import { Reducer } from "redux";
+import {  } from "../_actions/Actions";
+import { FileActions, FileActionTypes } from "../_actions/FileActions";
 
-// export interface IFileList {
-//   fileList: FileList | null
-// }
 
-// export interface IFileState {
-//   readonly fileList: IFileList;
-// }
+export interface IFileState {
+  readonly file: string;
+}
 
-// const initialFileState: IFileState = {
-//     fileList: null
-// }
+const initialFileState: IFileState = {
+    file: ""
+}
 
-// // Reducer: (previousState, action) => newState
+// Reducer: (previousState, action) => newState
 
-// export const fileListReducer: Reducer<IFileState, FileActions> = (
-//   state = initialFileState,
-//   action
-// ) => {
-//   switch (action.type) {
-//     case FileActionTypes.CHANGE: {
-//       return {
-//         ...state,
-//         fileList: action.fileList,
-//       };
-//     }
-//     default:
-//       return state;
-//   }
-// };
+export const fileListReducer: Reducer<IFileState, FileActions> = (
+  state = initialFileState,
+  action
+) => {
+  switch (action.type) {
+    case FileActionTypes.CHANGE: {
+      return {
+        ...state,
+        file: action.file,
+      };
+    }
+    default:
+      return state;
+  }
+};

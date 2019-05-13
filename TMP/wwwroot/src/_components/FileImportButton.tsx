@@ -1,62 +1,47 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { IColor, IColorState } from '../_reducers/ColorReducer';
 import { IAppState } from '../_helpers/store';
-import { Dispatch } from 'redux';
-import { changeColor, ColorThunkDispatch } from '../_actions/Actions';
+import { FileThunkDispatch, changeFile } from '../_actions/Actions';
 import { Icon, Label, Button } from 'semantic-ui-react';
 
-import { Helper } from "dxf";
-import fs from "fs";
-import { join } from 'path';
+import SVG from "react-inlinesvg";
+import { IFileState } from '../_reducers/FilesReducer';
 
 // Create the containers interface
 // IProps is unique to this container components prop
-// interface FileImportButtonProps {
-//     handleClick: () => Promise<any>;
-// }
+interface FileImportButtonProps {
+    handleClick: (e: React.ChangeEvent<HTMLInputElement>) => Promise<string>;
+}
 
-// type AllProps = FileImportButtonProps;
+type AllProps = FileImportButtonProps & IFileState;
 
-class FileImportButtonIcon extends React.Component {
+class FileImportButtonIcon extends React.Component<AllProps> {
 
-    handleClick(e: React.ChangeEvent<HTMLInputElement>) {
-        console.log(e.target.files);
-        let fileReader = new FileReader();
-        fileReader.onloadend = (e) => {
-            const content = fileReader.result;
-            let helper = new Helper(content);
-            console.log(helper.parsed);
-            const svg = helper.toSVG();
-            console.log(svg);
-        }
-        if (e.target.files) {
-            fileReader.readAsText(e.target.files[0]);
-        }
+    constructor(props: AllProps) {
+        super(props);
     }
 
-
     public render() {
-        let fileInputRef = React.createRef();
+        const { handleClick, file } = this.props;
         return (
             <>
                 <Icon as="label" htmlFor="file" name="upload">
 
                 </Icon>
-                <input type="file" id="file" style={{ display: "hidden" }} onChange={this.handleClick} />
+                <input type="file" id="file" style={{ display: "hidden" }} onChange={handleClick} />
             </>
         );
     }
 }
 
-const mapStateToProps = (state: IAppState) => state.color;
+const mapStateToProps = (state: IAppState) => state.file;
 
-const mapDispatchToProps = (dispatch: ColorThunkDispatch) => ({
-    handleClick: () => dispatch(changeColor())
+const mapDispatchToProps = (dispatch: FileThunkDispatch) => ({
+    handleClick: (e: React.ChangeEvent<HTMLInputElement>) => dispatch(changeFile(e))
 });
 
 export default connect(
-    // mapStateToProps,
-    // mapDispatchToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(FileImportButtonIcon);
 
