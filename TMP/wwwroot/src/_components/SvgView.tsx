@@ -3,13 +3,12 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import { Button, Container, Grid, Menu, Icon, Sidebar, Segment, Header, Dropdown, GridColumn, MenuItem, GridRow, Ref, Placeholder, Rail, Sticky } from "semantic-ui-react";
-import ColorList from './ColorList';
-import SelectedColor from './SelectedColor';
-import ColorButton from './ColorButton';
+
 import _ from 'lodash'
+import FileImportButton from './FileImportButton';
+
 
 class SvgView extends React.Component {
-    contextRef = React.createRef();
     render() {
         return (
             <div>
@@ -25,7 +24,8 @@ class SvgView extends React.Component {
                     <Grid.Column width={1}>
                         <Menu vertical icon >
                             <Menu.Item >
-                                <Icon name="upload"></Icon>
+                            <Icon name="upload"></Icon>
+
                             </Menu.Item>
                             <Menu.Item>
                                 <Icon name="edit"></Icon>
@@ -40,12 +40,9 @@ class SvgView extends React.Component {
                     </Grid.Column>
                     <Grid.Column width={12} className="qc-part-view">
                         <Segment>
-                            <Header>
-                                App Content
-                            </Header>
+                        <FileImportButton/>
                         </Segment>
                     </Grid.Column>
-
                 </Grid>
             </div>
 
