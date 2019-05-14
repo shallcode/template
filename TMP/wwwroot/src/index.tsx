@@ -18,6 +18,14 @@ import { getAllColors } from './_actions/Actions';
 import App from './App/App';
 import './index.scss';
 
+import * as WebFontLoader from 'webfontloader';
+
+WebFontLoader.load({
+  google: {
+    families: ['Roboto:300,400,500,700', 'Material Icons'],
+  },
+});
+
 // Root component props
 interface RootProps {
   store: Store<IAppState>;
@@ -29,9 +37,9 @@ and wraps the App component with Provider, giving props to containers
 */
 const Root: React.SFC<RootProps> = props => {
   return (
-      <Provider store={props.store}>
+    <Provider store={props.store}>
         <App />
-      </Provider>
+    </Provider>
   );
 };
 

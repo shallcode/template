@@ -19,19 +19,22 @@ import {
   colorsReducer,
 } from '../_reducers/ColorReducer';
 import { IFileState, fileListReducer } from '../_reducers/FilesReducer';
+import { IDrawerState, drawerReducer } from '../_reducers/DrawerReducer';
 
 // Create an interface for the application state
 export interface IAppState {
   color: IColorState;
   colors: IColorsState;
   file: IFileState;
+  drawer: IDrawerState;
 }
 
 // Create the root reducer
 const rootReducer = combineReducers<IAppState>({
     color: colorReducer,
     colors: colorsReducer,
-    file: fileListReducer
+    file: fileListReducer,
+    drawer: drawerReducer
 });
 
 const loggerMiddleware = createLogger();
