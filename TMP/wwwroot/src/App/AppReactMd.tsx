@@ -5,6 +5,8 @@ import { Toolbar, Button, Grid, Cell, Drawer, NavigationDrawer, DialogContainer,
 import { IAppState } from '../_helpers/store';
 import { DrawerThunkDispatch, toggleDrawer } from '../_actions/DrawerActions';
 import { IDrawerState } from '../_reducers/DrawerReducer';
+import FileImportButton from '../_components/FileImportButton';
+import SvgView from '../_components/SvgView';
 
 interface NavLinkProps {
     label: string;
@@ -14,6 +16,7 @@ interface NavLinkProps {
 
 const NavLink = (props: NavLinkProps) => (<ListItem
     active={true}
+    rightIcon={<FontIcon>{props.icon}</FontIcon>}
     key={props.label}
     primaryText={props.label}
 />);
@@ -24,17 +27,17 @@ const navItems = [{
     to: '/',
     icon: 'home',
 }, {
-    label: 'Page 1',
+    label: 'Shops',
     to: '/page-1',
-    icon: 'bookmark',
+    icon: 'business',
 }, {
-    label: 'Page 2',
+    label: 'Quality Control',
     to: '/page-2',
-    icon: 'donut_large',
+    icon: 'verified_user',
 }, {
-    label: 'Page 3',
+    label: 'Parts',
     to: '/page-3',
-    icon: 'flight_land',
+    icon: 'brightness_low',
 }].map((props) => { return (<NavLink icon={props.icon} label={props.label} to={props.to} key={props.label} />) });
 
 interface AppProps extends IDrawerState {
@@ -57,7 +60,7 @@ class AppReactMd extends React.Component<AppProps> {
                     actions={(
                         <Button key="action" icon >search</Button>
                     )}
-                    title="Title"
+                    title="Easy QC"
                 />
 
                 <Drawer
@@ -70,7 +73,12 @@ class AppReactMd extends React.Component<AppProps> {
                     navItems={navItems}
                 >
                 </Drawer>
-                <Grid className={drawerVisible ? 'md-toolbar-relative qc-pusher' : 'md-toolbar-relative qc-pusher transition'}>Test</Grid>
+                <Grid className={drawerVisible ? 'md-toolbar-relative qc-pusher' : 'md-toolbar-relative qc-pusher transition'}>
+                    <Cell size={2}><FileImportButton/></Cell>
+                    <Cell size={8}><SvgView/></Cell>
+                        
+                        
+                </Grid>
 
 
 

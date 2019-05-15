@@ -2,10 +2,10 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { IAppState } from '../_helpers/store';
 import { FileThunkDispatch, changeFile } from '../_actions/Actions';
-import { Icon, Label, Button } from 'semantic-ui-react';
 
 import SVG from "react-inlinesvg";
 import { IFileState } from '../_reducers/FilesReducer';
+import { Button, FontIcon } from 'react-md';
 
 
 
@@ -28,6 +28,7 @@ class FileImportButton extends React.Component<AllProps> {
     }
 
     showOpenFileDlg = () => {
+        console.log(this.inputOpenFileRef);
         if(this.inputOpenFileRef.current) this.inputOpenFileRef.current.click();
     }
     public render() {
@@ -35,8 +36,7 @@ class FileImportButton extends React.Component<AllProps> {
         
         return (
             <>
-                <Button icon color='blue'>
-                    <Icon name='upload' onClick={() => {this.showOpenFileDlg()}} />
+                <Button icon primary onClick={this.showOpenFileDlg}>cloud_upload
                 </Button>
                 <input type="file" 
                 id="file" 

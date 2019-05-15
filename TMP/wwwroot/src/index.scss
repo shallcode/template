@@ -7,8 +7,8 @@ body {
 
     // Push Nav
     .qc-pusher{
-        left:$md-drawer-desktop-width;
-        width: calc(100%-$md-drawer-desktop-width);
+        margin-left:$md-drawer-desktop-width;
+        width: calc(100% - #{$md-drawer-desktop-width});
         position: relative;
         transition: $md-drawer-transition-time ease-in-out;
         -webkit-transition: $md-drawer-transition-time ease-in-out;
@@ -16,7 +16,8 @@ body {
     }
 
     .qc-pusher.transition {
-        left: 0;
+        margin-left: 0;
+        width: 100%;
     }
     
 

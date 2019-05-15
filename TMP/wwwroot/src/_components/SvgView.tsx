@@ -2,9 +2,6 @@ import * as React from 'react';
 
 import { connect } from 'react-redux';
 
-import { Button, Container, Grid, Menu, Icon, Sidebar, Segment, Header, Dropdown, GridColumn, MenuItem, GridRow, Ref, Placeholder, Rail, Sticky } from "semantic-ui-react";
-
-import _ from 'lodash'
 import { IFileState } from '../_reducers/FilesReducer';
 import { IAppState } from '../_helpers/store';
 class SvgView extends React.Component<IFileState> {
