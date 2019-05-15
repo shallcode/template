@@ -10,6 +10,8 @@ import { IAppState } from '../_helpers/store';
 import { DrawerThunkDispatch, toggleDrawer, loadDrawerNavItems } from '../_actions/DrawerActions';
 // Essential typings/interfaces to define what part of the state this component cares about
 import { IDrawerState, IDrawerNavItem } from '../_reducers/DrawerReducer';
+import FileImportButton from '../_components/FileImportButton';
+import SvgView from '../_components/SvgView';
 
 // Nav link generator using the DrawerNavItem interface 
 // Used for generating Navigation Links in the Drawer (Sidebar) from data stored in the "store" or app state
@@ -73,7 +75,9 @@ class AppShell extends React.Component<AppProps> {
                 <Grid 
                     className={drawerVisible ? 'md-toolbar-relative app-shell-pusher' : 'md-toolbar-relative app-shell-pusher transition'} // Styling shit for the pusher effect
                 >
-                    {/* Where actual content goes, like buttons and SVG loaders etc */}
+                    {/* Where actual content goes, like buttons and SVG loaders etc. Uncomment below to see the file import + svg render functionality */}
+                    {/* <FileImportButton/>
+                    <SvgView/> */} 
                 </Grid>
             </div>
         );
