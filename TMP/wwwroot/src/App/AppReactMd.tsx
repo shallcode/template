@@ -70,7 +70,7 @@ class AppReactMd extends React.Component<AppProps> {
                     navItems={navItems}
                 >
                 </Drawer>
-                <Grid className='qc-pusher-content md-toolbar-relative'>Test</Grid>
+                <Grid className={drawerVisible ? 'md-toolbar-relative qc-pusher' : 'md-toolbar-relative qc-pusher transition'}>Test</Grid>
 
 
 

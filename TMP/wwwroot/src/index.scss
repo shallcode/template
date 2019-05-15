@@ -4,19 +4,20 @@
 
 
 body {
-    .name-container {
-        display: grid;
-    }
-
-    .qc-part-view .segment{
-        height: 100%;
-    }
-    file {
-        display: none;
-    }
 
     // Push Nav
+    .qc-pusher{
+        left:$md-drawer-desktop-width;
+        width: calc(100%-$md-drawer-desktop-width);
+        position: relative;
+        transition: $md-drawer-transition-time ease-in-out;
+        -webkit-transition: $md-drawer-transition-time ease-in-out;
+        -moz-transition: $md-drawer-transition-time ease-in-out;
+    }
 
+    .qc-pusher.transition {
+        left: 0;
+    }
     
 
 }
