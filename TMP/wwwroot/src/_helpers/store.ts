@@ -34,7 +34,7 @@ const rootReducer = combineReducers<IAppState>({
     color: colorReducer,
     colors: colorsReducer,
     file: fileListReducer,
-    drawer: drawerReducer
+    drawer: drawerReducer,
 });
 
 const loggerMiddleware = createLogger();

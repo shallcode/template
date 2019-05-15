@@ -1,3 +1,4 @@
+// Important that babel polyfill sits first for "regenrators"....whatever those are
 import "@babel/polyfill";
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
@@ -14,11 +15,15 @@ import { Store } from 'redux';
 import configureStore, { IAppState } from './_helpers/store';
 import { getAllColors } from './_actions/Actions';
 
-
+// Main component for app
 import App from './App/App';
+
+// Entry point for styling
 import './index.scss';
 
+// Loads fonts for use in the app
 import * as WebFontLoader from 'webfontloader';
+import { loadDrawerNavItems } from "./_actions/DrawerActions";
 
 WebFontLoader.load({
   google: {
@@ -45,7 +50,8 @@ const Root: React.SFC<RootProps> = props => {
 
 // Generate the store
 const store = configureStore();
-store.dispatch(getAllColors());
+
+// We can hypothetically fire off Actions to our dispatch/store here. 
 
 // Render the App
 ReactDOM.render(<Root store={store} />, document.getElementById(

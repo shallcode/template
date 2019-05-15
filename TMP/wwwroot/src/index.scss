@@ -1,24 +1,8 @@
-@import './common.scss';
 @import 'globals';
+@import './styles/AppShell.scss';
 @include react-md-everything;
 
 
-body {
+// body {
 
-    // Push Nav
-    .qc-pusher{
-        margin-left:$md-drawer-desktop-width;
-        width: calc(100% - #{$md-drawer-desktop-width});
-        position: relative;
-        transition: $md-drawer-transition-time ease-in-out;
-        -webkit-transition: $md-drawer-transition-time ease-in-out;
-        -moz-transition: $md-drawer-transition-time ease-in-out;
-    }
-
-    .qc-pusher.transition {
-        margin-left: 0;
-        width: 100%;
-    }
-    
-
-}
+// }
