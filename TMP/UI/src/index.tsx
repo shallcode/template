@@ -24,6 +24,9 @@ import './index.scss';
 // Loads fonts for use in the app
 import * as WebFontLoader from 'webfontloader';
 import { loadDrawerNavItems } from "./_actions/DrawerActions";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+
 
 WebFontLoader.load({
   google: {
@@ -40,10 +43,13 @@ interface RootProps {
 Create a root component that receives the store via props
 and wraps the App component with Provider, giving props to containers
 */
+
 const Root: React.SFC<RootProps> = props => {
   return (
     <Provider store={props.store}>
-        <App />
+        <Router>
+            <Route path="/" component={App} />
+        </Router>
     </Provider>
   );
 };

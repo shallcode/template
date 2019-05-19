@@ -12,7 +12,7 @@ class SvgView extends React.Component<IFileState> {
         // const svg = parser.parseFromString(file, 'image/svg+xml');
         // console.log(svg);
         return (
-            <div className="qc-svg-view" dangerouslySetInnerHTML={{__html: file}}>
+            <div className="eqc-svg-view" dangerouslySetInnerHTML={{__html: file}}>
             </div>
         );
     }

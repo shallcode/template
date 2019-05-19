@@ -1,20 +1,15 @@
 @import "react-md/src/scss/react-md";
 @include react-md-drawers;
-@include react-md-theme-everything(
-  $md-blue-grey-50, 
-  $md-grey-900,
-  false,
-  'dark-theme'
-);
+@include react-md-theme-everything($md-blue-grey-50, $md-grey-900, false, "dark-theme");
 
 .app-shell > .app-shell-pusher {
   margin-left: $md-drawer-desktop-width;
   width: calc(100% - #{$md-drawer-desktop-width});
   height: 100%;
   position: relative;
-  transition: $md-drawer-transition-time ease-out;
-  -webkit-transition: $md-drawer-transition-time ease-out;
-  -moz-transition: $md-drawer-transition-time ease-out;
+  transition: all $md-drawer-transition-time ;
+  -webkit-transition: all $md-drawer-transition-time ;
+  -moz-transition: all $md-drawer-transition-time ;
 }
 
 .app-shell > .app-shell-pusher.transition {

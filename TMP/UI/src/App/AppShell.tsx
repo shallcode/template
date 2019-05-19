@@ -3,7 +3,7 @@ import * as React from 'react';
 // Connects our app to the store/dispatch
 import { connect } from 'react-redux';
 // UI Framework components
-import { Toolbar, Button, Grid, Drawer, ListItem, FontIcon } from 'react-md';
+import { Toolbar, Button, Grid, Drawer, ListItem, FontIcon, Cell } from 'react-md';
 // Our universal App state (this component is a 'container' component and therefore knows all about the store)
 import { IAppState } from '../_helpers/store';
 // Drawer action creators and a Thunk dispatch for linking props to dispatch
@@ -12,6 +12,10 @@ import { DrawerThunkDispatch, toggleDrawer, loadDrawerNavItems } from '../_actio
 import { IDrawerState, IDrawerNavItem } from '../_reducers/DrawerReducer';
 import FileImportButton from '../_components/FileImportButton';
 import SvgView from '../_components/SvgView';
+
+
+import auth0 from 'auth0-js';
+import AuthService from '../_helpers/AuthService';
 
 // Nav link generator using the DrawerNavItem interface 
 // Used for generating Navigation Links in the Drawer (Sidebar) from data stored in the "store" or app state
@@ -26,10 +30,17 @@ export const NavLink = (props: IDrawerNavItem) => (<ListItem
 interface AppProps extends IDrawerState {
     handleDrawerToggle: () => Promise<any>;
     loadNavLinks: () => Promise<any>;
+    // authService: AuthService;
+    redirect:boolean;
 }
 
 // AppShell now knows about everything in AppProps
 class AppShell extends React.Component<AppProps> {
+
+
+    constructor(props: AppProps){
+        super(props);
+    }
 
     // navlink generation function, could be extracted into a utility function
     private createNavLinks(navItems: IDrawerNavItem[]) : JSX.Element[] {
@@ -42,6 +53,15 @@ class AppShell extends React.Component<AppProps> {
     componentDidMount() {
         const {loadNavLinks} = this.props;
         loadNavLinks();
+    }
+
+    login(){
+        let authService: AuthService = new AuthService();
+        authService.login();
+    }
+
+    accountLogin() {
+        const {redirect} = this.props;
     }
 
     render() {
@@ -57,7 +77,7 @@ class AppShell extends React.Component<AppProps> {
                         <Button key="nav" icon onClick={handleDrawerToggle}>menu</Button>
                     )}
                     actions={( // Not relevant yet. 
-                        <Button key="action" icon >search</Button>
+                        <Button key="login" icon onClick={this.login}>exit_to_app</Button>
                     )}
                     title="Title" // Obvious
                 />
@@ -76,8 +96,8 @@ class AppShell extends React.Component<AppProps> {
                     className={drawerVisible ? 'md-toolbar-relative app-shell-pusher' : 'md-toolbar-relative app-shell-pusher transition'} // Styling shit for the pusher effect
                 >
                     {/* Where actual content goes, like buttons and SVG loaders etc. Uncomment below to see the file import + svg render functionality */}
-                    {/* <FileImportButton/>
-                    <SvgView/> */} 
+                    <Cell size={1}><FileImportButton/></Cell>
+                    <Cell size={10}><SvgView/></Cell>
                 </Grid>
             </div>
         );

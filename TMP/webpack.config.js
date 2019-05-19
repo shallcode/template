@@ -7,14 +7,14 @@ const ROOT_DIR = path.resolve(__dirname, '../');
 const SRC_DIR = path.resolve(ROOT_DIR, 'src');
 
 module.exports = {
-  entry: ['./wwwroot/src/index.scss', './wwwroot/src/index.tsx'],
+  entry: ['./UI/src/index.scss', './UI/src/index.tsx'], // Where webpack begins transpilation
   output: {
     filename: bundleFileName + '.js',
-    path: path.resolve(__dirname, 'wwwroot/dist')
+    path: path.resolve(__dirname, 'wwwroot/dist') // Where webpack outputs the transpiled Javascript
   },
   mode: process.env.NODE_ENV || 'development',
   resolve: {
-    extensions: ['.js', '.ts', '.tsx', '.scss']
+    extensions: ['.js', '.ts', '.tsx', '.scss'] // Extensions webpack will attempt to transpile
   },
   optimization: {
     minimizer: [
@@ -35,7 +35,7 @@ module.exports = {
         use: ['babel-loader']
       },
       {
-        test: /\.scss$/,
+        test: /\.scss$/, // Rules for transpiling scss
         use: [
           {
             loader: 'file-loader',
@@ -53,7 +53,7 @@ module.exports = {
           }
         ],
       },
-      {
+      { // Rules for transpiling fonts
         test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)/,
         loader: 'ignore-loader'
       },
